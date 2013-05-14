@@ -50,13 +50,9 @@ public class BulletinBoardRepositoryImpl implements BulletinBoardRepository {
 		board.getStickers().remove(sticker);
 		dbManager.findAndModify(new Query(Criteria.where("id").is(sticker.getBulletin_id())), 
 				Update.update("stickers", board.getStickers()), BulletinBoard.class);
-		
+		dbManager.remove(sticker);
 	}
 
-	@Override
-	public Sticker updateStickerOfBoard(Sticker sticker) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

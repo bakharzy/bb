@@ -16,6 +16,4 @@ public interface BulletinBoardRepository {
 	
 	void removeStickerFromBoard(Sticker sticker);
 	
-	Sticker updateStickerOfBoard(Sticker sticker);
-	
 }

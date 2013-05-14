@@ -102,7 +102,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<warName>shoppinglist</warName>
+<!-- 					<warName>shoppinglist</warName> -->
+					<warName>bordilainen</warName>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -119,10 +120,14 @@
 				</executions>
 				<configuration>
 					<target>
+<!-- 						<scp -->
+<!-- 							localFile="${project.build.directory}/shoppinglist.war" -->
+<!-- 							remoteTodir="ec2-user@${bas1.host}:${bas.deployDir}" trust="true" -->
+<!-- 							keyfile="${sp.keyfile}" />							 -->
 						<scp
-							localFile="${project.build.directory}/shoppinglist.war"
+							localFile="${project.build.directory}/bordilainen.war"
 							remoteTodir="ec2-user@${bas1.host}:${bas.deployDir}" trust="true"
-							keyfile="${sp.keyfile}" />							
+							keyfile="${sp.keyfile}" />
 					</target>
 				</configuration>
 				<dependencies>

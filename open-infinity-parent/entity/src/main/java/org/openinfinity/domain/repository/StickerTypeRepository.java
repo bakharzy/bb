@@ -11,6 +11,5 @@ public interface StickerTypeRepository {
 		void removeStickerType(StickerType type);
 		
 		Collection<StickerType> findAll();
-		
-		void updateStickerType(StickerType type);
+
 }
