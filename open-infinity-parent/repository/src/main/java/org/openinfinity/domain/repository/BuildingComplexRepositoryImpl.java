@@ -49,6 +49,12 @@ public class BuildingComplexRepositoryImpl implements BuildingComplexRepository{
 			dbManager.remove(b);			
 		}		
 	}
+
+	@Override
+	public BuildingComplex findById(String id) {
+		
+		return dbManager.findById(new Query(Criteria.where("id").is(id)), BuildingComplex.class); 
+	}
 	
 
 }

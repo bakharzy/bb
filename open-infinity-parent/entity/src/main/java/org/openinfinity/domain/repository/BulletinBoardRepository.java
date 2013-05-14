@@ -8,7 +8,7 @@ import org.openinfinity.domain.entity.Sticker;
 public interface BulletinBoardRepository {
 
 
-	String createBulletinBoard(String buildingComplexId);
+	String saveBulletinBoard(String buildingComplexId);
 		
 	void addSticker(Sticker sticker);	
 	

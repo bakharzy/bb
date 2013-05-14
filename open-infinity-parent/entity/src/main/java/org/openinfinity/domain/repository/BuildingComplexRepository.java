@@ -12,6 +12,8 @@ public interface BuildingComplexRepository {
 		
 		Collection<BuildingComplex> queryByAddress(String address);
 		
+		BuildingComplex findById(String id);
+		
 		void updateBuildingComplexAddress(String building_id, String address);
 		
 		Collection<BuildingComplex> listAll();
