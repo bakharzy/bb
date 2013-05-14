@@ -24,7 +24,7 @@ public class Sticker {
 	@NotScript @NotNull @NonNull
 	private String password;
 	@NotScript @NonNull
-	private String reportCount;
+	private int reportCount;
 	@NotScript @NonNull
 	private String summary;
 	@NotScript @NotNull @NonNull
@@ -64,11 +64,11 @@ public class Sticker {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getReportCount() {
+	public int getReportCount() {
 		return reportCount;
 	}
-	public void setReportCount(String reportCount) {
-		this.reportCount = reportCount;
+	public void increaseReporCount() {
+		this.reportCount++;
 	}
 	public String getSummary() {
 		return summary;

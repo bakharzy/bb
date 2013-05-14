@@ -10,17 +10,11 @@ public interface BulletinBoardService {
 
 	String createBulletinBoard(String buildingComplexId);
 		
-	void addSticker(Sticker sticker);
-	
-	void deleteSticker(Sticker sticker);
+	void addSticker(Sticker sticker);	
 	
 	Sticker findStickerById(String sticker_id);
 	
 	Collection<Sticker> findAllStickers();
-	
-	//---- Mohammad
-	void deleteBulletinBoard(BulletinBoard bulletinBoard);
-	//we should delete all the stickers related to the board
 	
 	Sticker addStickerToBoard(Sticker sticker);
 	

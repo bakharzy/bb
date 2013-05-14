@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 @Data
-public class Type {
+public class StickerType {
 
 	@Id @NotScript
 	private String id;

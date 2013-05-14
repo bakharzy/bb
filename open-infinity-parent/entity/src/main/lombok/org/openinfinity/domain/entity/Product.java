@@ -55,6 +55,46 @@ public class Product {
 	
 	@NumberFormat @DecimalMin("0.00") @NotNull @NonNull
 	private BigDecimal price;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
 	
 //	private Product(String name, String company, String description, BigDecimal price) {
 //		this.name = name;
@@ -66,5 +106,6 @@ public class Product {
 //	public static Product newInstance(String name, String company, String description, BigDecimal price) {
 //		return new Product(name, company, description, price);
 //	}
+	
 	
 }
