@@ -24,7 +24,7 @@ public class BulletinBoardRepositoryImpl implements BulletinBoardRepository {
 	}
 
 	@Override
-	public void addSticker(String board_id,Sticker sticker) {
+	public void addStickerToBoard(String board_id,Sticker sticker) {
 		
 		BulletinBoard board = dbManager
 				.findById(new Query(Criteria.where("id").is(board_id)), BulletinBoard.class);
@@ -42,15 +42,14 @@ public class BulletinBoardRepositoryImpl implements BulletinBoardRepository {
 		return board.getStickers();
 	}
 
-	@Override
-	public Sticker addStickerToBoard(Sticker sticker) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void removeStickerFromBoard(Sticker sticker) {
-		// TODO Auto-generated method stub
+		 BulletinBoard board = dbManager.findById(new Query(Criteria.where("id").is(sticker.getBulletin_id())),
+				 BulletinBoard.class);
+		board.getStickers().remove(sticker);
+		dbManager.findAndModify(new Query(Criteria.where("id").is(sticker.getBulletin_id())), 
+				Update.update("stickers", board.getStickers()), BulletinBoard.class);
 		
 	}
 

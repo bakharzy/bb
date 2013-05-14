@@ -12,8 +12,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 @Data
-@NoArgsConstructor
-@RequiredArgsConstructor
 public class BuildingComplex {
 	@Id @NotScript
 	private String id;
