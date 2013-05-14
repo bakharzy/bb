@@ -15,7 +15,7 @@ public class BuildingComplex {
 	@Id @NotScript
 	private String id;
 	
-	@NotScript @NotNull @NonNull
+	@NotScript @NotNull
 	private String address;
 
 	public String getId() {

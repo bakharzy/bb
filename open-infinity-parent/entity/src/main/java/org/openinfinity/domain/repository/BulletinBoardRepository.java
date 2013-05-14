@@ -8,9 +8,9 @@ import org.openinfinity.domain.entity.Sticker;
 public interface BulletinBoardRepository {
 
 
-	String saveBulletinBoard(String buildingComplexId);
+	String saveBulletinBoard(BulletinBoard board);
 		
-	void addSticker(Sticker sticker);	
+	void addSticker(String board_id,Sticker sticker);	
 	
 	Sticker findStickerById(String sticker_id);
 	

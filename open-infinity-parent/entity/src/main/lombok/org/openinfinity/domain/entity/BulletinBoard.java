@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 public class BulletinBoard {
 
-	@Id @NotScript
+	@Id @NotScript 
 	private String id;
 	
 	@NotScript 
