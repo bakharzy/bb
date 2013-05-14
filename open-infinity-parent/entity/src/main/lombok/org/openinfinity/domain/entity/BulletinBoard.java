@@ -27,6 +27,14 @@ public class BulletinBoard {
 		this.stickers.add(sticker);
 	}
 	
+	public Collection<Sticker> getStickers(){
+		return this.stickers;
+	}
+	
+	public void setStickers(Collection<Sticker> stickers){
+		this.stickers = stickers;
+	}
+	
 	public String getId() {
 		return id;
 	}

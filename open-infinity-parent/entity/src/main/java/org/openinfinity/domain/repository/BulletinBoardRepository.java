@@ -12,9 +12,7 @@ public interface BulletinBoardRepository {
 		
 	void addSticker(String board_id,Sticker sticker);	
 	
-	Sticker findStickerById(String sticker_id);
-	
-	Collection<Sticker> findAllStickers();
+	Collection<Sticker> findAllStickers(String board_id);
 	
 	Sticker addStickerToBoard(Sticker sticker);
 	
