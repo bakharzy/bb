@@ -6,13 +6,15 @@ import org.openinfinity.domain.entity.BuildingComplex;
 
 public interface BuildingComplexRepository {
 
-		String createBuildingComplex(String address);
+		String saveBuildingComplex(BuildingComplex building);
 		
-		String deleteBuildingComplex(BuildingComplex buildingComplex);
+		void removeBuildingComplex(BuildingComplex buildingComplex);
 		
 		Collection<BuildingComplex> queryByAddress(String address);
 		
-		void updateBuildingComplexAddress(String address);
+		void updateBuildingComplexAddress(String building_id, String address);
 		
 		Collection<BuildingComplex> listAll();
+		
+		void removeAll();
 }
