@@ -6,7 +6,9 @@ import org.openinfinity.domain.entity.BulletinBoard;
 import org.openinfinity.domain.entity.Sticker;
 import org.openinfinity.domain.repository.BulletinBoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BulletinBoardServiceImpl implements BulletinBoardService {
 
 	@Autowired

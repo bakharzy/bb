@@ -18,5 +18,9 @@ public interface BulletinBoardService {
 		
 	void removeStickerFromBoard(Sticker sticker);
 	
+	Collection<BulletinBoard> listAllBoards();
+	
+	BulletinBoard findBoardById(String board_id);
+	
 	
 }

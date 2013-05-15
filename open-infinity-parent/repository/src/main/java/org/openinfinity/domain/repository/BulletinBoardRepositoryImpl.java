@@ -59,6 +59,18 @@ public class BulletinBoardRepositoryImpl implements BulletinBoardRepository {
 				.is(bulletin_id).and("id").is(sticker_id)), Sticker.class);
 	}
 
+	@Override
+	public Collection<BulletinBoard> listAllBoards() {
+		
+		return dbManager.findAll(BulletinBoard.class);
+	}
+
+	@Override
+	public BulletinBoard findBoardById(String board_id) {
+	
+		return dbManager.findById(new Query(Criteria.where("id").is(board_id)), BulletinBoard.class);
+	}
+
 
 
 }

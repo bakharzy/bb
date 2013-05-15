@@ -5,7 +5,9 @@ import java.util.Collection;
 import org.openinfinity.domain.entity.BuildingComplex;
 import org.openinfinity.domain.repository.BuildingComplexRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BuildingComplexServiceImpl implements BuildingComplexService {
 	@Autowired
 	BuildingComplexRepository repo;
