@@ -15,23 +15,23 @@ public class Sticker {
 
 	@Id @NotScript
 	private String id;
-	@NotScript @NonNull
+	@NotScript 
 	private String bulletin_id;
-	@NotScript @NonNull
+	@NotScript 
 	private String type_Id;
-	@NotScript @NotNull @NonNull
+	@NotScript @NotNull 
 	private String email;
-	@NotScript @NotNull @NonNull
+	@NotScript @NotNull 
 	private String password;
-	@NotScript @NonNull
+	@NotScript 
 	private int reportCount;
-	@NotScript @NonNull
+	@NotScript 
 	private String summary;
-	@NotScript @NotNull @NonNull
+	@NotScript @NotNull 
 	private String title;
-	@NotScript @NotNull @NonNull
+	@NotScript @NotNull 
 	private String description;
-	@NotScript @NotNull @NonNull
+	@NotScript @NotNull 
 	private String expiration_date;
 	
 	public String getId() {
