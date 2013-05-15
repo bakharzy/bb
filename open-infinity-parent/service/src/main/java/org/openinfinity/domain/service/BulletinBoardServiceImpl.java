@@ -43,4 +43,16 @@ public class BulletinBoardServiceImpl implements BulletinBoardService {
 		
 	}
 
+	@Override
+	public Collection<BulletinBoard> listAllBoards() {
+		
+		return repo.listAllBoards();
+	}
+
+	@Override
+	public BulletinBoard findBoardById(String board_id) {
+		
+		return repo.findBoardById(board_id);
+	}
+
 }
