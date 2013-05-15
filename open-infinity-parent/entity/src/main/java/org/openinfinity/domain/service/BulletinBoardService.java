@@ -10,16 +10,13 @@ public interface BulletinBoardService {
 
 	String createBulletinBoard(String buildingComplexId);
 		
-	void addSticker(Sticker sticker);	
+	void addStickerToBoard(String bulletin_id,Sticker sticker);	
 	
-	Sticker findStickerById(String sticker_id);
+	Sticker findStickerById(String bulletin_id, String sticker_id);
 	
-	Collection<Sticker> findAllStickers();
-	
-	Sticker addStickerToBoard(Sticker sticker);
-	
+	Collection<Sticker> findAllStickers(String bulletin_id);
+		
 	void removeStickerFromBoard(Sticker sticker);
 	
-	Sticker updateStickerOfBoard(Sticker sticker);
 	
 }

@@ -53,6 +53,12 @@ public class BulletinBoardRepositoryImpl implements BulletinBoardRepository {
 		dbManager.remove(sticker);
 	}
 
+	@Override
+	public Sticker findStickerById(String bulletin_id, String sticker_id) {		
+		return dbManager.findById(new Query(Criteria.where("bulletin_id")
+				.is(bulletin_id).and("id").is(sticker_id)), Sticker.class);
+	}
+
 
 
 }

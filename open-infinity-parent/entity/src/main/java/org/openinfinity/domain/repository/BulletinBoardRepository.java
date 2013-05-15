@@ -10,7 +10,9 @@ public interface BulletinBoardRepository {
 
 	String saveBulletinBoard(BulletinBoard board);
 		
-	void addStickerToBoard(String board_id,Sticker sticker);	
+	void addStickerToBoard(String board_id,Sticker sticker);
+	
+	Sticker findStickerById(String bulletin_id,String sticker_id);
 	
 	Collection<Sticker> findAllStickers(String board_id);
 	

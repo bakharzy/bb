@@ -3,37 +3,43 @@ package org.openinfinity.domain.service;
 import java.util.Collection;
 
 import org.openinfinity.domain.entity.BuildingComplex;
+import org.openinfinity.domain.repository.BuildingComplexRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class BuildingComplexServiceImpl implements BuildingComplexService {
-
+	@Autowired
+	BuildingComplexRepository repo;
+	
 	@Override
 	public String createBuildingComplex(String address) {
-		// TODO Auto-generated method stub
-		return null;
+		/*
+		 * check for "new building" already exists in DB must be done here
+		 */
+		BuildingComplex building = new BuildingComplex();
+		building.setAddress(address);
+		repo.saveBuildingComplex(building);
+		return building.getId();
 	}
 
 	@Override
-	public String deleteBuildingComplex(BuildingComplex buildingComplex) {
-		// TODO Auto-generated method stub
-		return null;
+	public void deleteBuildingComplex(BuildingComplex buildingComplex) {	
+		 repo.removeBuildingComplex(buildingComplex);
 	}
 
 	@Override
-	public Collection<BuildingComplex> queryByAddress(String address) {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<BuildingComplex> queryByAddress(String address) {	
+		return repo.queryByAddress(address);
 	}
 
 	@Override
-	public void updateBuildingComplexAddress(String address) {
-		// TODO Auto-generated method stub
+	public void updateBuildingComplexAddress(String building_id,String address) {
+		repo.updateBuildingComplexAddress(building_id, address);
 
 	}
 
 	@Override
-	public Collection<BuildingComplex> listAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<BuildingComplex> listAll() {		
+		return repo.listAll();
 	}
 
 }
