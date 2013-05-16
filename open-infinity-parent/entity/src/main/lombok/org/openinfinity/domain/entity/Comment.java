@@ -15,11 +15,11 @@ public class Comment {
 	
 	@Id @NotScript
 	private String id;
-	@NotScript @NotNull @NonNull
+	@NotScript @NotNull 
 	private String sticker_id;
-	@NotScript @NotNull @NonNull
+	@NotScript @NotNull 
 	private String commentor_name;
-	@NotScript @NotNull @NonNull
+	@NotScript @NotNull 
 	private String comment_text;
 	public String getId() {
 		return id;

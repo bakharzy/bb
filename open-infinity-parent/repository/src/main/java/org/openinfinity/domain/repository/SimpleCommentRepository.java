@@ -2,6 +2,7 @@ package org.openinfinity.domain.repository;
 
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.UUID;
 
 import org.openinfinity.domain.entity.Comment;
 import org.openinfinity.domain.entity.Sticker;
@@ -14,6 +15,7 @@ public class SimpleCommentRepository implements CommentRepository{
 	
 	@Override
 	public String saveComment(Comment comment) {
+		comment.setId(UUID.randomUUID().toString());
 		commentManager.add(comment);
 		return comment.getId();
 	}

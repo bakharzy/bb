@@ -32,20 +32,38 @@ public class BulletinBoardRepositoryTest {
 		BulletinBoard actual = boardRepo.findBoardById(id);
 		assertTrue(actual.getStickers().contains(sticker));
 	}
-//	@Test
-//	public void testFindStickerById() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	public void testFindAllStickers() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	public void testRemoveStickerFromBoard() {
-//		fail("Not yet implemented");
-//	}
+	@Test
+	public void testFindStickerById() {
+		BulletinBoard expected = createBulletinBoard();
+		Sticker sticker = createSticker();
+		String id = boardRepo.saveBulletinBoard(expected);
+		boardRepo.addStickerToBoard(id, sticker);
+		Sticker actual = boardRepo.findStickerById(id, sticker.getId());
+		assertEquals(sticker.getPassword(),actual.getPassword());
+		assertEquals(sticker.getBulletin_id(),actual.getBulletin_id());
+		
+	}
+	@Test
+	public void testFindAllStickers() {
+		BulletinBoard expected = createBulletinBoard();
+		Sticker sticker = createSticker();
+		Sticker sticker2 = createSticker();
+		String id = boardRepo.saveBulletinBoard(expected);
+		boardRepo.addStickerToBoard(id, sticker);
+		boardRepo.addStickerToBoard(id, sticker2);
+		assertEquals(2,boardRepo.findAllStickers(id).size());
+	}
+
+	@Test
+	public void testRemoveStickerFromBoard() {
+		BulletinBoard expected = createBulletinBoard();
+		Sticker sticker = createSticker();
+		String id = boardRepo.saveBulletinBoard(expected);
+		boardRepo.addStickerToBoard(id, sticker);
+		boardRepo.removeStickerFromBoard(sticker);
+		BulletinBoard actual = boardRepo.findBoardById(id);
+		assertFalse(actual.getStickers().contains(sticker));	
+	}
 	private BulletinBoard createBulletinBoard(){
 		BulletinBoard board = new BulletinBoard();
 		board.setBuilding_id("test building id");
